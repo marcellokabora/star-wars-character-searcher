@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Wars Character Searcher</title>
+    <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #000000;
+            min-height: 100vh;
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Starfield background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, transparent),
+                radial-gradient(2px 2px at 160px 120px, rgba(255, 255, 255, 0.9), transparent),
+                radial-gradient(1px 1px at 230px 80px, #ffffff, transparent),
+                radial-gradient(2px 2px at 300px 150px, rgba(255, 255, 255, 0.7), transparent),
+                radial-gradient(1px 1px at 370px 50px, #ffffff, transparent),
+                radial-gradient(2px 2px at 440px 180px, rgba(255, 255, 255, 0.8), transparent),
+                radial-gradient(1px 1px at 520px 90px, #ffffff, transparent),
+                radial-gradient(2px 2px at 600px 140px, rgba(255, 255, 255, 0.9), transparent),
+                radial-gradient(1px 1px at 680px 60px, #ffffff, transparent),
+                radial-gradient(2px 2px at 750px 200px, rgba(255, 255, 255, 0.7), transparent),
+                radial-gradient(1px 1px at 820px 110px, #ffffff, transparent),
+                radial-gradient(2px 2px at 900px 170px, rgba(255, 255, 255, 0.8), transparent),
+                radial-gradient(1px 1px at 970px 40px, #ffffff, transparent),
+                radial-gradient(2px 2px at 50px 250px, rgba(255, 255, 255, 0.9), transparent),
+                radial-gradient(1px 1px at 150px 300px, #ffffff, transparent),
+                radial-gradient(2px 2px at 250px 350px, rgba(255, 255, 255, 0.7), transparent),
+                radial-gradient(1px 1px at 350px 280px, #ffffff, transparent),
+                radial-gradient(2px 2px at 450px 320px, rgba(255, 255, 255, 0.8), transparent),
+                radial-gradient(1px 1px at 550px 270px, #ffffff, transparent),
+                radial-gradient(2px 2px at 650px 340px, rgba(255, 255, 255, 0.9), transparent),
+                radial-gradient(1px 1px at 750px 290px, #ffffff, transparent),
+                radial-gradient(2px 2px at 850px 360px, rgba(255, 255, 255, 0.7), transparent),
+                radial-gradient(1px 1px at 950px 310px, #ffffff, transparent);
+            background-size: 1000px 400px;
+            animation: starDrift 20s ease-in-out infinite, twinkle 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes starDrift {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(15px, -10px);
+            }
+
+            50% {
+                transform: translate(-10px, 15px);
+            }
+
+            75% {
+                transform: translate(12px, 8px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        sw-app {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <sw-app></sw-app>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
